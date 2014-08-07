@@ -3,12 +3,14 @@
  * @author XtIV
  * @name Upload
  * @desc Upload Files to the Web Server
- * @version v1.11.07.24.03.35
+ * @version v1.2.0
  * @icon cloud-upload-icon.png
  * @mini  cloud-upload
  * @link upload
  * @see content
  * @license
+ * @release alpha
+ * @alpha true
  */
 	class xUpload extends Xengine{
 		function dbSync(){
