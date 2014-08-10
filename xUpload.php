@@ -3,12 +3,14 @@
  * @author XtIV
  * @name Upload
  * @desc Upload Files to the Web Server
- * @version v1.11.07.24.03.35
+ * @version v1(2.1)
  * @icon cloud-upload-icon.png
  * @mini  cloud-upload
  * @link upload
  * @see content
  * @license
+ * @release alpha
+ * @alpha true
  */
 	class xUpload extends Xengine{
 		function dbSync(){
@@ -34,6 +36,18 @@
 				)
 			);
 		}
+
+		function autoRun(){
+			$c = $this->_CFG;
+			$cfg = explode('/', $c['dir']['cfg']);
+			$cfg = $cfg[count($cfg)-2].'/'.$cfg[count($cfg)-1];
+
+			return array(
+				'upload_dir' => SVR_FILES.'/'.$this->_SET['action'],
+				'UPLOAD' 	=> $cfg.'/'.$_SERVER['HTTP_HOST'].'/'.$this->_SET['action']
+			);
+		}
+
 		function newFolder(){
 			$new = array(
 				'text' 		=> $_POST['text'],
@@ -60,6 +74,8 @@
 			));
 		}
 
+
+
 		function index(){
 
 		}
@@ -82,10 +98,13 @@
 			exit;
 		}
 
-		function uploadFile(){
+		function jqUpload($o){ 
+			$o['upload_dir'] = $this->_SET['upload_dir'].$o['upload_dir'];
 
+			require('UploadHandler.php'); 
+			new UploadHandler($o);
+			exit;
 		}
-
 
 		function userBg(){
 			session_start();
