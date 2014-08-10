@@ -3,7 +3,7 @@
  * @author XtIV
  * @name Upload
  * @desc Upload Files to the Web Server
- * @version v1(2.1)
+ * @version v1(2.2)
  * @icon cloud-upload-icon.png
  * @mini  cloud-upload
  * @link upload
