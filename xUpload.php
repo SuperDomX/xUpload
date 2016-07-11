@@ -1,9 +1,9 @@
 <?php
 /**
- * @author XtIV
  * @name Upload
  * @desc Upload Files to the Web Server
- * @version v1(2.2)
+    * @version v0.1(160710)
+    * @author  @xopherdeep
  * @icon cloud-upload-icon.png
  * @mini  cloud-upload
  * @link upload
